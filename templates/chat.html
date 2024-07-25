@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-payments.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-vendors.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=block" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="{% static 'style/main.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'style/style.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'style/chat.css' %}">
+    <script src="
+https://cdn.jsdelivr.net/npm/date-fns@3.6.0/cdn.min.js
+"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/chat.js' %}"></script>
+    <title>Chat</title>
+</head>
+<body>
+  {% include 'common-header.html' %}
+       <div class="page-wrapper">
+        <!-- Page header -->
+        <div class="page-header">
+          <div class="container-xl">
+            <div class="row g-2 align-items-center">
+              <div class="col">
+                <h2 class="page-title">
+                  Chat
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Page body -->
+        <div class="page-body">
+          <div class="container-xl">
+            <div class="card" style="height: calc(100vh - 100px)">
+              <div class="row g-0">
+                <div class="col-12 col-lg-5 col-xl-3 border-end">
+                  <div class="card-header d-none d-md-block">
+                    <div class="input-icon">
+                      <span class="input-icon-addon"> <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path><path d="M21 21l-6 -6"></path></svg>
+                      </span>
+                      <input type="text" value="" class="form-control" placeholder="Search…" aria-label="Search" spellcheck="false" data-ms-editor="true">
+                    </div>
+                  </div>
+                  <div class="card-body p-0 scrollable" style="height: calc(100vh - 180px)">
+                    <div class="nav flex-column nav-pills" role="tablist" id="chat-users">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-lg-7 col-xl-9 d-flex flex-column">
+                  <div class="card-body scrollable" style="height: calc(100vh - 180px)">
+                    <div class="chat">
+                      <div class="chat-bubbles" id="chat-log">
+                       
+                     
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-footer">
+                    <div class="input-group input-group-flat">
+                      <input type="text" class="form-control" autocomplete="off" placeholder="Type message" spellcheck="false" data-ms-editor="true" id="chat-message-input">
+                      <span class="input-group-text">
+                        
+                        <a href="#" class="link-secondary" data-bs-toggle="tooltip" aria-label="Clear search" data-bs-original-title="Clear search"> <!-- Download SVG icon from http://tabler-icons.io/i/mood-smile -->
+                          <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path><path d="M9 10l.01 0"></path><path d="M15 10l.01 0"></path><path d="M9.5 15a3.5 3.5 0 0 0 5 0"></path></svg>
+                        </a>
+                        <i class="ti ti-send fs-2 ms-2" id="chat-message-submit"></i>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</body>
+</html>
